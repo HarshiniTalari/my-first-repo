@@ -17,11 +17,4 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Query("SELECT s FROM Student s JOIN s.courses c WHERE c.name = :courseName")
     List<Student> findStudentsByCourseName(@Param("courseName") String courseName);
 
-//    @Query(value = "SELECT COUNT(*) FROM student_courses WHERE course_id = :courseId", nativeQuery = true)
-//    int countStudentsInCourse(@Param("courseId") Long courseId);
-//
-//    @Query("SELECT c FROM Course c WHERE SIZE(c.students) > :minStudents")
-//    List<Course> findCoursesWithMoreThanNStudents(@Param("minStudents") int minStudents);
-
-
 }
